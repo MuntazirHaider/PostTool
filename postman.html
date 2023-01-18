@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>postTool</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar bg-dark">
+        <div class="container-fluid d-flex justify-content-center">
+            <span class="navbar-brand mb-0 h1 fs-2 text-white">PostTool</span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Url input -->
+        <div class="row mb-3 my-5">
+            <label for="urlinput" class="col-sm-2 col-form-label">Enter valid URL</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="urlinput" placeholder="Enter URL Here">
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Select request type -->
+        <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">Request Type</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="requesttype" id="get" value="Get" checked>
+                    <label class="form-check-label" for="gridRadios1">
+                        Get
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="requesttype" id="post" value="Post">
+                    <label class="form-check-label" for="gridRadios2">
+                        Post
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+
+        <hr>
+
+        <!-- content type -->
+        <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">Content Type</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="contenttype" id="jsonradio" value="Json" checked>
+                    <label class="form-check-label" for="json">
+                        Json
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="contenttype" id="otherradio" value="other">
+                    <label class="form-check-label" for="other">
+                        Any other
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+
+        <hr>
+
+        <!-- parameter box -->
+        <div id="parameterbox">
+            <form class="row g-3">
+                <label for="parameters" class="col-sm-2 col-form-label">Parameter 1</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="parameterKey1" placeholder="Enter 1st Parameter Key">
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="parameterValue1" placeholder="Enter 1st Parameter Value">
+                </div>
+                <div class="col-md-1"><button class="btn btn-primary fs-6" id="addparam">+</button></div>
+            </form>
+            <div id="params"></div>
+        </div>
+        
+
+        
+
+        <!-- json box -->
+        <div id="jsonbox">
+            <div class="input-group" id="jsonBox">
+                <label for="parameters" class="col-sm-2 col-form-label">Enter Json Here</label>
+                <textarea class="form-control" aria-label="With textarea" id="jsonText"></textarea>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- submit button which will fetch api -->
+        <button class="btn btn-primary w-100" id="submit">Submit</button>
+        <br>
+        <br>
+        <br>
+        <!-- response box -->
+        <div id="responseBox">
+            <div class="input-group" id="responseBox">
+                <textarea class="form-control" aria-label="With textarea" id="responseText" placeholder="Your Result Will Appear Here"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="postman.js"></script>
+</body>
+
+</html>
